@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand pointer" routerLink="home">Sona Hotel</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link pointer" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pointer" routerLink="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pointer" routerLink="rooms">Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pointer" routerLink="contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pointer" routerLink="add-room">Booking Now</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!this.authService.isLoggedIn" class="nav-link pointer" routerLink="log-in">signin</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!this.authService.isLoggedIn" class="nav-link pointer" routerLink="sign-up">signup</a>
+          <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button"
+              class="btn btn-danger">Logout</button>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
